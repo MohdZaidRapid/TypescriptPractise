@@ -1,2 +1,3 @@
-const a = 23;
-console.log(a)
+let a: string;
+let nambo: number;
+let check: boolean;

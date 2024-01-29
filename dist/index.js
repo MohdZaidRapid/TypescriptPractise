@@ -1,3 +1,4 @@
 "use strict";
-const a = 23;
-console.log(a);
+let a;
+let nambo;
+let check;
