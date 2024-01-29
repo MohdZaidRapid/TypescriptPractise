@@ -1,14 +1,14 @@
 "use strict";
-// method 1
-let a;
-let nambo;
-let check;
-// method 2
-let namboo = "zaid";
-// union
-let surname;
-surname = "46";
-const func = (n, m) => {
-    console.log(n, m);
-    return n * m;
-};
+// // method 1
+// let a: string;
+// let nambo: number;
+// let check: boolean;
+// // method 2
+// let namboo = <string>"zaid";
+// // union
+// let surname: string | number;
+// surname = "46";
+// const func = (n: number, m: number): number => {
+//   console.log(n, m);
+//   return n * m;
+// };
