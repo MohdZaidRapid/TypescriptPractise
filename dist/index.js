@@ -1,6 +1,16 @@
 "use strict";
-// let a: UserName = 20;
-const func = (n, m) => {
-    console.log(n, m);
-    return n + m;
+const obj = {
+    height: 24,
+    weight: 34,
+    gender: true,
+};
+const obj2 = {
+    height: 24,
+    weight: 34,
+    gender: false,
+};
+const obj3 = {
+    height: 24,
+    weight: 34,
+    //   gender: true,
 };

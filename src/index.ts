@@ -1,10 +1,23 @@
-// Array
-// type UserName = string | number;
-type UserName = (n: string, m: string) => string;
+type Obj = {
+  height: number;
+  weight: number;
+  gender?: boolean;
+};
 
-// let a: UserName = 20;
+const obj: Obj = {
+  height: 24,
+  weight: 34,
+  gender: true,
+};
 
-const func: UserName = (n, m): string => {
-  console.log(n, m);
-  return n + m;
+const obj2: Obj = {
+  height: 24,
+  weight: 34,
+  gender: false,
+};
+
+const obj3: Obj = {
+  height: 24,
+  weight: 34,
+  //   gender: true,
 };
