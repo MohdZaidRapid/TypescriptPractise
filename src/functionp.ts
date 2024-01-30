@@ -72,9 +72,12 @@
 
 // getData(productOne);
 
+type themeMode = "light" | "dark";
+
 // Never Type
 const err = new Error();
 
-const errorHandler = () => {
+const errorHandler = (): never => {
   throw new Error();
 };
+const mode: themeMode = "light";
