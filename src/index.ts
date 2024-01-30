@@ -1,23 +1,7 @@
-type Obj = {
-  height: number;
-  weight: number;
-  gender?: boolean;
-};
+// function
 
-const obj: Obj = {
-  height: 24,
-  weight: 34,
-  gender: true,
-};
+type FuncType = (n: number, m: number) => number;
 
-const obj2: Obj = {
-  height: 24,
-  weight: 34,
-  gender: false,
-};
-
-const obj3: Obj = {
-  height: 24,
-  weight: 34,
-  //   gender: true,
+const func: FuncType = (a, b) => {
+  return a * b;
 };
