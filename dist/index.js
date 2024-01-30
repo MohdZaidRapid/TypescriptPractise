@@ -1,30 +1,25 @@
 "use strict";
 // Class and objects
-// classes
-class Player {
-    constructor(height, weight, power) {
-        this.height = height;
-        this.weight = weight;
-        this.power = power;
-        this.getMyHeight = () => this.height;
+// class Product implements ProductType {
+//   public name: string;
+//   public price: number;
+//   public stock: number;
+//   public id: string = String(Math.random() * 1000);
+//   constructor(name: string, price: number, stock: number) {
+//     this.name = name;
+//     this.price = price;
+//     this.stock = stock;
+//   }
+// }
+class Product {
+    //   private lol: boolean = true;
+    constructor(name, price, stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
         this.id = String(Math.random() * 1000);
+        this.getId = () => this.id;
     }
 }
-class Plater extends Player {
-    constructor(height, weight, power, special) {
-        super(height, weight, power);
-        this.special = special;
-    }
-}
-class Player2 extends Player {
-    constructor(height, weight, power, special) {
-        super(height, weight, power);
-        this.getMyPower = () => this.power;
-        this.special = special;
-    }
-}
-const anas = new Player2(100, 150, 23, true);
-console.log(anas.weight);
-console.log(anas.getMyHeight());
-console.log(anas.getMyPower());
-console.log(anas.id);
+const product1 = new Product("Macbook", 20000, 20);
+console.log(product1.getId());
