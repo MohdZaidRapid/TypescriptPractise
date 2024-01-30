@@ -1,8 +1,14 @@
 "use strict";
 // function
-const func = (n, m, l) => {
-    if (typeof l == "undefined")
-        return n * m;
-    return n * m * l;
+const getData = (product) => {
+    //   product.id = "sasas";
+    console.log(product);
 };
-func(25, 23);
+const productOne = {
+    name: "Lenovo",
+    stock: 46,
+    price: 9999,
+    photo: "sample",
+    id: "aksjaklsjkj",
+};
+getData(productOne);
