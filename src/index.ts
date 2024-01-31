@@ -1,89 +1,102 @@
-// utility classesz
+// Generics
 
-// type utility
+// const func = <T>(n: T): T => {
+//   return n;
+// };
 
-// Partial Type
-// type User = {
+// const ans = func(20);
+// const ans2 = func("20");
+// const ans3 = func(true);
+
+// type Person = {
 //   name: string;
-//   email: string;
-// };
-
-// type User2 = Partial<User>;
-
-//
-// Required Type( opposite of [partial])
-
-// type User = {
-//   name?: string;
-//   email: string;
-// };
-
-// type User2 = Required<User>;
-
-// const user: Required<User> = {};
-
-// Record<keys,Type>
-
-// type User = {
-//   name: string;
-//   email: string;
-// };
-
-// type User2 = Record<"name" | "email" | "gender", string>;
-
-// example interface
-
-// interface UserInfo {
 //   age: number;
-// }
-
-// type UserName = "john" | "levi" | "elon" | "jack";
-// const users: Record<UserName, UserInfo> = {
-//   john: { age: 34 },
-//   levi: { age: 34 },
-//   elon: { age: 34 },
-//   jack: { age: 34 },
 // };
 
-// Pick <Type,Keys>
-// interface OrderInfo {
-//   readonly id: string;
-//   user: string;
-//   city: string;
-//   state: string;
-//   country: string;
-//   status: string;
-// }
-
-// // type ShipppingInfo = Pick<OrderInfo, "city" | "state" | "country">;
-// interface ShipppingInfo {
-//   city: string;
-//   state: string;
-//   country: string;
-// }
-
-// type Random = Omit<ShipppingInfo, "country">;
-
-// Exclude<Type,ExcludeUnion>
-
-// // type Random = Extract<MyUnion, boolean>;
-// type Random = Exclude<MyUnion, boolean>;
-
-// type MyUnion = string | number | boolean;
-// type Random = NonNullable<MyUnion>;
-// const myfunc = (a: number, b: string) => {
-//   console.log(a + b);
+// const func = <T>(n: T): T => {
+//   return n;
 // };
 
-// type Random = Parameters<typeof myfunc>;
+// const person1: Person = {
+//   name: "zaid",
+//   age: 109,
+// };
+// const ans = func<Person>(person1);
 
-// class SampleClass {
-//   constructor(public s: string, public t: string) {}
-// }
+// const arr: number[] = [];
+// const arr2: Array<number> = [];
 
-// type Random = ConstructorParameters<typeof SampleClass>;
+// const func = <T, U>(n: T, o: U):{n:T,o:U} => {
+//   return { n, o };
+// };
 
-// Return type
-const myfunc = (a: number, b: string) => {
-  console.log(a + b);
+// const ans = func<number, string>(20, "LOL");
+// ans.
+
+// type Person = {
+//   name: string;
+//   age: number;
+// };
+
+// type Person2 = {
+//   name: string;
+//   age: number;
+//   email: string;
+// };
+
+// const user: Person = {
+//   name: "zaid",
+//   age: 109,
+// };
+
+// const user2: Person2 = {
+//   name: "zaid",
+//   age: 109,
+//   email: "zaid@gmail.com",
+// };
+
+// const func = <T, U extends T>(n: T, o: U): { n: T; o: U } => {
+//   return { n, o };
+// };
+
+// const ans = func<
+//   Person,
+//   Person2
+//   //   {
+//   //     name: string;
+//   //     age: number;
+//   //     email: string;
+//   //   }
+// >(user, user2);
+
+type Person = {
+  name: string;
+  age: number;
 };
+
+const users: Person[] = [
+  {
+    name: "zaid",
+    age: 12,
+  },
+  {
+    name: "zaid1",
+    age: 21,
+  },
+  {
+    name: "Random",
+    age: 52,
+  },
+  {
+    name: "Random2",
+    age: 59,
+  },
+];
+
+const filterByPeoples = (arr: [], property: any, value: any) => {
+  arr.filter((item) => item[property] === value);
+};
+
+
+
+const filteredPeopleByName = filterByPeoples(users, "name", "zaid");
