@@ -65,4 +65,25 @@
 // type Random = Omit<ShipppingInfo, "country">;
 
 // Exclude<Type,ExcludeUnion>
-type random = Exclude<string | number, number>;
+
+// // type Random = Extract<MyUnion, boolean>;
+// type Random = Exclude<MyUnion, boolean>;
+
+// type MyUnion = string | number | boolean;
+// type Random = NonNullable<MyUnion>;
+// const myfunc = (a: number, b: string) => {
+//   console.log(a + b);
+// };
+
+// type Random = Parameters<typeof myfunc>;
+
+// class SampleClass {
+//   constructor(public s: string, public t: string) {}
+// }
+
+// type Random = ConstructorParameters<typeof SampleClass>;
+
+// Return type
+const myfunc = (a: number, b: string) => {
+  console.log(a + b);
+};
