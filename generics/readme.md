@@ -1,0 +1,1 @@
+tsc --init --sourceMap --rootDir src --outDir dist
