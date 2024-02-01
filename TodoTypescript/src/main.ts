@@ -37,19 +37,48 @@ const generateTodoITem = (title: string, isCompleted: boolean, id: string) => {
   checkBox.setAttribute("type", "checkbox");
   checkBox.className = "isCompleted";
   checkBox.checked = isCompleted;
+  checkBox.onchange = () => {
+    todos.find((item) => {
+      if (item.id === id) {
+        item.isCompleted = checkBox.checked;
+      }
+    });
+    paragraph.className = checkBox.checked ? "textCut" : "";
+  };
 
   // creating p
 
   const paragraph: HTMLParagraphElement = document.createElement("p");
+  paragraph.innerText = title;
+  paragraph.className = isCompleted ? "textCut" : "";
 
   // creating Delete button
-  const btn:HTMLButtonElement=document.createElement("button")
-  
+  const btn: HTMLButtonElement = document.createElement("button");
 
+  btn.innerHTML = "X";
+  btn.className = "delteBtn";
+
+  btn.onclick = () => {
+    deleteTodo(id);
+  };
+
+  // Appendin gall to todo item
+
+  todo.append(checkBox, paragraph, btn);
+  todosContainer.append(todo);
+};
+
+const deleteTodo = (id: string) => {
+  const idx = todos.findIndex((item) => item.id === id);
+  todos.splice(idx, 1);
+  renderTodo(todos);
 };
 
 const renderTodo = (todos: Todo[]) => {
+  todosContainer.innerText = "";
   todos.forEach((item) => {
     generateTodoITem(item.title, item.isCompleted, item.id);
   });
 };
+
+// git add . && git commit -m "added todo " && git push origin main
