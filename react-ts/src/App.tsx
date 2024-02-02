@@ -1,20 +1,18 @@
-
-import Box from './components/Box'
+import { useState } from "react";
+import Box from "./components/Box";
 
 function App() {
-
-
+  const [] = useState();
   return (
     <>
       <div>
-        {/* <Box children={<>lol</>} heading={"Hello world red freeman"} count={234} /> */}
-        <Box  heading={"Hello world red freeman"}  >
-          <button>Click me</button>
-        </Box>
-
+        <Box label="Search" value={""} onChange={() => {}} />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+{
+  /* <Box children={<>lol</>} heading={"Hello world red freeman"} count={234} /> */
+}
